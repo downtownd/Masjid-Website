@@ -31,7 +31,7 @@ const ServicesPage = () => {
       description:
         'Weekend Islamic school for children and adults. Learn Quran, Arabic, and Islamic studies.',
       icon: 'education',
-      contactEmail: 'education@communitymasjid.org',
+      contactEmail: 'education@icomodesto.org',
       availability: 'Saturdays & Sundays',
     },
     {
@@ -40,7 +40,7 @@ const ServicesPage = () => {
       description:
         'Engaging activities for Muslim youth including sports, competitions, and mentorship.',
       icon: 'youth',
-      contactEmail: 'youth@communitymasjid.org',
+      contactEmail: 'youth@icomodesto.org',
       availability: 'Weekly',
     },
     {
@@ -49,7 +49,7 @@ const ServicesPage = () => {
       description:
         'Nikah ceremonies, premarital counseling, and marriage support services.',
       icon: 'marriage',
-      contactEmail: 'nikah@communitymasjid.org',
+      contactEmail: 'imam@icomodesto.org',
       contactPhone: '(123) 456-7890',
     },
     {
@@ -58,7 +58,7 @@ const ServicesPage = () => {
       description:
         'Confidential Islamic counseling for individuals, couples, and families.',
       icon: 'counseling',
-      contactEmail: 'counseling@communitymasjid.org',
+      contactEmail: 'counseling@icomodesto.org',
       availability: 'By Appointment',
     },
     {
@@ -67,7 +67,7 @@ const ServicesPage = () => {
       description:
         'Proper collection and distribution of Zakat to eligible recipients in our community.',
       icon: 'zakat',
-      contactEmail: 'zakat@communitymasjid.org',
+      contactEmail: 'zakat@icomodesto.org',
     },
     {
       id: '7',
@@ -75,7 +75,7 @@ const ServicesPage = () => {
       description:
         'Guidance, mentorship, and resources for those new to Islam.',
       icon: 'support',
-      contactEmail: 'newmuslim@communitymasjid.org',
+      contactEmail: 'newmuslim@icomodesto.org',
     },
     {
       id: '8',
@@ -83,7 +83,7 @@ const ServicesPage = () => {
       description:
         'Interfaith dialogue, community service, and public education about Islam.',
       icon: 'outreach',
-      contactEmail: 'outreach@communitymasjid.org',
+      contactEmail: 'outreach@icomodesto.org',
     },
     {
       id: '9',
@@ -91,7 +91,7 @@ const ServicesPage = () => {
       description:
         'Supervised volunteer program where high school students support masjid activities and earn officially documented service credits for their resume or school records.',
       icon: 'internship',
-      contactEmail: 'internship@communitymasjid.org',
+      contactEmail: 'internship@icomodesto.org',
       availability: 'Year-round',
       contactPhone: '(123) 456-7890',
     },

@@ -221,7 +221,7 @@ const HomePage = () => {
               </div>
 
               <a
-                href="mailto:internship@communitymasjid.org"
+                href="mailto:internship@icomodesto.org"
                 className="btn-primary bg-white text-islamic-green hover:bg-gray-100 inline-flex items-center gap-2"
               >
                 Apply Now
