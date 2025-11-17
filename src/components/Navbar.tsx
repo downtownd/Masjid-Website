@@ -22,6 +22,7 @@ const Navbar = () => {
     { path: '/', label: t('nav.home') },
     { path: '/events', label: t('nav.events') },
     { path: '/services', label: t('nav.services') },
+    { path: '/forum', label: 'Forum' },
     { path: '/gallery', label: t('nav.gallery') },
     { path: '/contact', label: t('nav.contact') },
   ]

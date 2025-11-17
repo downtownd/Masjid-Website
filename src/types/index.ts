@@ -86,3 +86,32 @@ export type Language = 'en' | 'ar' | 'ur' | 'so'
 export interface Translation {
   [key: string]: string | Translation
 }
+
+export type ForumCategory = 'business' | 'news' | 'general'
+
+export interface ForumPost {
+  id: string
+  category: ForumCategory
+  title: string
+  content: string
+  author: string
+  authorEmail: string
+  createdAt: string
+  replies: ForumReply[]
+  isPinned?: boolean
+  isLocked?: boolean
+}
+
+export interface ForumReply {
+  id: string
+  postId: string
+  content: string
+  author: string
+  authorEmail: string
+  createdAt: string
+}
+
+export interface ForumUser {
+  name: string
+  email: string
+}

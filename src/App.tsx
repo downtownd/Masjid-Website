@@ -11,6 +11,7 @@ import DonatePage from './pages/DonatePage'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import GalleryPage from './pages/GalleryPage'
+import ForumPage from './pages/ForumPage'
 import NotificationPermissionPrompt from './components/NotificationPermissionPrompt'
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/forum" element={<ForumPage />} />
           </Routes>
         </main>
         <Footer />
