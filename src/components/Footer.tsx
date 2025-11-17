@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Building, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react'
+import { Building, MapPin, Phone, Mail, Facebook, Youtube, MessageCircle } from 'lucide-react'
 import { useLanguageStore } from '../store/languageStore'
 
 const Footer = () => {
@@ -23,28 +23,31 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/modesto.imam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-lg hover:bg-islamic-green transition-colors"
+                className="bg-gray-700 p-2 rounded-lg hover:bg-blue-600 transition-colors"
+                aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.youtube.com/@icomodesto"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-lg hover:bg-islamic-green transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-lg hover:bg-islamic-green transition-colors"
+                className="bg-gray-700 p-2 rounded-lg hover:bg-red-600 transition-colors"
+                aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
+              </a>
+              <a
+                href="https://chat.whatsapp.com/ChNRdD1d3dNKPOtVx9TBuq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-700 p-2 rounded-lg hover:bg-green-600 transition-colors"
+                aria-label="WhatsApp Community"
+              >
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -73,6 +76,11 @@ const Footer = () => {
               <li>
                 <Link to="/gallery" className="text-gray-300 hover:text-islamic-green transition-colors">
                   {t('nav.gallery')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/forum" className="text-gray-300 hover:text-islamic-green transition-colors">
+                  Forum
                 </Link>
               </li>
               <li>

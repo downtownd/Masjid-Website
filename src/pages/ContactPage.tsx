@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react'
 import ContactForms from '../components/ContactForms'
 import { useLanguageStore } from '../store/languageStore'
 
@@ -29,7 +29,7 @@ const ContactPage = () => {
 
       {/* Contact Info Cards */}
       <section className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,6 +77,29 @@ const ContactPage = () => {
               1445 N Carpenter Rd
               <br />
               Modesto, CA 95358
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="card text-center"
+          >
+            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="w-7 h-7 text-green-600" />
+            </div>
+            <h3 className="font-bold text-islamic-dark mb-2">WhatsApp</h3>
+            <a
+              href="https://chat.whatsapp.com/ChNRdD1d3dNKPOtVx9TBuq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors"
+            >
+              Join Community
+            </a>
+            <p className="text-xs text-gray-500 mt-2">
+              Stay connected with the community
             </p>
           </motion.div>
         </div>
