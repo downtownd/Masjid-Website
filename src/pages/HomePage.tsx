@@ -121,7 +121,7 @@ const HomePage = () => {
             >
               <h2 className="section-title">About Our Masjid</h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Established in 1995, Islamic Center of Modesto has been a cornerstone of Islamic faith
+                Established in 1984, Islamic Center of Modesto has been a cornerstone of Islamic faith
                 and practice in our community. We are dedicated to fostering spiritual growth,
                 education, and social welfare for all.
               </p>

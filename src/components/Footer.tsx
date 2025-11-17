@@ -18,7 +18,7 @@ const Footer = () => {
               <h3 className="text-xl font-bold">Islamic Center of Modesto</h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              A place of worship, learning, and community serving families since 1995.
+              A place of worship, learning, and community serving families since 1984.
               Building stronger bonds through faith and service.
             </p>
             <div className="flex gap-3">

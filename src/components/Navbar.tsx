@@ -40,7 +40,7 @@ const Navbar = () => {
               <h1 className="text-xl md:text-2xl font-bold text-islamic-dark">
                 Islamic Center of Modesto
               </h1>
-              <p className="text-xs text-gray-600 hidden md:block">Serving the community since 1995</p>
+              <p className="text-xs text-gray-600 hidden md:block">Serving the community since 1984</p>
             </div>
           </Link>
 
