@@ -22,7 +22,7 @@ const EventsCalendar = ({ limit }: { limit?: number }) => {
       maxAttendees: 50,
       currentAttendees: 32,
       registrationRequired: true,
-      imageUrl: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=500',
+      imageUrl: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?w=500',
     },
     {
       id: '2',
@@ -46,7 +46,7 @@ const EventsCalendar = ({ limit }: { limit?: number }) => {
       maxAttendees: 100,
       currentAttendees: 67,
       registrationRequired: true,
-      imageUrl: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=500',
+      imageUrl: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=500',
     },
     {
       id: '4',
@@ -59,7 +59,7 @@ const EventsCalendar = ({ limit }: { limit?: number }) => {
       maxAttendees: 200,
       currentAttendees: 145,
       registrationRequired: true,
-      imageUrl: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?w=500',
+      imageUrl: 'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=500',
     },
     {
       id: '5',

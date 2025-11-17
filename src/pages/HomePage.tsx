@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, MapPin, Users, BookOpen, Heart } from 'lucide-react'
+import { ArrowRight, MapPin, Users, BookOpen, Heart, Award, CheckCircle, FileText, Calendar as CalendarIcon } from 'lucide-react'
 import PrayerTimes from '../components/PrayerTimes'
 import EventsCalendar from '../components/EventsCalendar'
 import LiveStream from '../components/LiveStream'
@@ -19,7 +19,7 @@ const HomePage = () => {
     <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-islamic-green via-teal-600 to-emerald-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1920')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1920')] bg-cover bg-center opacity-20"></div>
         <div className="relative container-custom py-20 md:py-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -143,28 +143,140 @@ const HomePage = () => {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=500"
-                alt="Prayer"
+                src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=500"
+                alt="Prayer Hall"
                 className="rounded-xl shadow-lg w-full h-48 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500"
-                alt="Education"
+                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500"
+                alt="Islamic Books"
                 className="rounded-xl shadow-lg w-full h-48 object-cover mt-8"
               />
               <img
-                src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=500"
-                alt="Community"
+                src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=500"
+                alt="Mosque Architecture"
                 className="rounded-xl shadow-lg w-full h-48 object-cover -mt-8"
               />
               <img
-                src="https://images.unsplash.com/photo-1576495199011-eb94736d05d6?w=500"
-                alt="Gathering"
+                src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=500"
+                alt="Prayer Space"
                 className="rounded-xl shadow-lg w-full h-48 object-cover"
               />
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Youth Internship Section */}
+      <section className="container-custom py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl shadow-2xl overflow-hidden"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* Left side - Content */}
+            <div className="p-8 md:p-12 bg-gradient-to-br from-islamic-green to-teal-700 text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                  <Award className="w-8 h-8" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold">Youth Internship Program</h2>
+              </div>
+
+              <p className="text-xl text-teal-50 mb-8 leading-relaxed">
+                A supervised volunteer program where high school students support masjid activities
+                and earn officially documented service credits for their resume or school records.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-teal-200 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Official Documentation</h3>
+                    <p className="text-teal-100">
+                      Receive verified service hour certificates for college applications
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <FileText className="w-6 h-6 text-teal-200 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Resume Building</h3>
+                    <p className="text-teal-100">
+                      Gain valuable experience in event planning, administration, and community service
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CalendarIcon className="w-6 h-6 text-teal-200 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">Flexible Schedule</h3>
+                    <p className="text-teal-100">
+                      Work around your school schedule with year-round opportunities
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="mailto:internship@communitymasjid.org"
+                className="btn-primary bg-white text-islamic-green hover:bg-gray-100 inline-flex items-center gap-2"
+              >
+                Apply Now
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
+
+            {/* Right side - Info */}
+            <div className="p-8 md:p-12 bg-gradient-to-br from-teal-50 to-green-50">
+              <h3 className="text-2xl font-bold text-islamic-dark mb-6">What You'll Do</h3>
+
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-islamic-green">
+                  <h4 className="font-bold text-islamic-dark mb-1">Event Support</h4>
+                  <p className="text-gray-600 text-sm">
+                    Help organize community events, youth programs, and educational workshops
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-islamic-green">
+                  <h4 className="font-bold text-islamic-dark mb-1">Administrative Tasks</h4>
+                  <p className="text-gray-600 text-sm">
+                    Assist with registration, communication, and facility management
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-islamic-green">
+                  <h4 className="font-bold text-islamic-dark mb-1">Educational Support</h4>
+                  <p className="text-gray-600 text-sm">
+                    Help with weekend Islamic school and youth education programs
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-islamic-green">
+                  <h4 className="font-bold text-islamic-dark mb-1">Community Outreach</h4>
+                  <p className="text-gray-600 text-sm">
+                    Participate in food drives, charity events, and interfaith initiatives
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-white rounded-lg border-2 border-islamic-green">
+                <p className="text-sm text-gray-700 mb-2">
+                  <strong>Requirements:</strong>
+                </p>
+                <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                  <li>Current high school student (grades 9-12)</li>
+                  <li>Minimum 3-month commitment</li>
+                  <li>Parental consent required</li>
+                  <li>4-10 hours per week</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* CTA Section */}

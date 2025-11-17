@@ -8,6 +8,7 @@ import {
   MessageCircle,
   Baby,
   Home,
+  Award,
 } from 'lucide-react'
 import { useLanguageStore } from '../store/languageStore'
 import { Service } from '../types'
@@ -84,6 +85,16 @@ const ServicesPage = () => {
       icon: 'outreach',
       contactEmail: 'outreach@communitymasjid.org',
     },
+    {
+      id: '9',
+      title: 'Youth Internship Program',
+      description:
+        'Supervised volunteer program where high school students support masjid activities and earn officially documented service credits for their resume or school records.',
+      icon: 'internship',
+      contactEmail: 'internship@communitymasjid.org',
+      availability: 'Year-round',
+      contactPhone: '(123) 456-7890',
+    },
   ]
 
   const getIcon = (iconName: string) => {
@@ -96,6 +107,7 @@ const ServicesPage = () => {
       zakat: Smile,
       support: Baby,
       outreach: Home,
+      internship: Award,
     }
     return icons[iconName] || BookOpen
   }
