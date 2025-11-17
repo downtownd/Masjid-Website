@@ -248,11 +248,16 @@ const DonationSection = () => {
         </div>
 
         {/* Donate Button */}
-        <button className="w-full btn-primary py-4 text-lg flex items-center justify-center gap-2">
+        <a
+          href="https://www.paypal.com/donate/?hosted_button_id=YTHUBQRXD6RFS"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full btn-primary py-4 text-lg flex items-center justify-center gap-2"
+        >
           <Heart className="w-5 h-5" />
           {t('donate.donateNow')} ${customAmount || selectedAmount}
           {donationType === 'monthly' && '/month'}
-        </button>
+        </a>
 
         <p className="text-center text-sm text-gray-600 mt-4">
           All donations are tax-deductible. You'll receive a receipt via email.

@@ -45,25 +45,28 @@ const PrayerTimes = () => {
   const nextPrayer = getNextPrayer(prayerTimes)
 
   const prayers = [
-    { name: t('prayer.fajr'), nameAr: 'الفجر', time: prayerTimes.fajr, iqamah: '05:45' },
+    { name: t('prayer.fajr'), nameAr: 'الفجر', time: prayerTimes.fajr, iqamah: '5:50 AM' },
     { name: t('prayer.sunrise'), nameAr: 'الشروق', time: prayerTimes.sunrise, iqamah: '-' },
-    { name: t('prayer.dhuhr'), nameAr: 'الظهر', time: prayerTimes.dhuhr, iqamah: '13:00' },
-    { name: t('prayer.asr'), nameAr: 'العصر', time: prayerTimes.asr, iqamah: '16:30' },
-    { name: t('prayer.maghrib'), nameAr: 'المغرب', time: prayerTimes.maghrib, iqamah: '18:40' },
-    { name: t('prayer.isha'), nameAr: 'العشاء', time: prayerTimes.isha, iqamah: '20:30' },
+    { name: t('prayer.dhuhr'), nameAr: 'الظهر', time: prayerTimes.dhuhr, iqamah: '12:15 PM' },
+    { name: t('prayer.asr'), nameAr: 'العصر', time: prayerTimes.asr, iqamah: '2:35 PM' },
+    { name: t('prayer.maghrib'), nameAr: 'المغرب', time: prayerTimes.maghrib, iqamah: '4:57 PM' },
+    { name: t('prayer.isha'), nameAr: 'العشاء', time: prayerTimes.isha, iqamah: '6:15 PM' },
   ]
 
   return (
     <div className="card">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-islamic-dark flex items-center gap-2">
             <Clock className="w-7 h-7 text-islamic-green" />
             {t('prayer.times')}
           </h2>
           <p className="text-gray-600 mt-1">{prayerTimes.date}</p>
+          {prayerTimes.hijriDate && (
+            <p className="text-sm text-gray-500 font-arabic">{prayerTimes.hijriDate} AH</p>
+          )}
         </div>
-        <div className="text-right">
+        <div className="text-left md:text-right">
           <div className="text-sm text-gray-600">{t('prayer.nextPrayer')}</div>
           <div className="text-lg font-bold text-islamic-green">{nextPrayer.name}</div>
           <div className="text-xl font-bold text-islamic-dark">{timeUntilNext}</div>
@@ -77,13 +80,22 @@ const PrayerTimes = () => {
           animate={{ opacity: 1, y: 0 }}
           className="bg-gradient-to-r from-islamic-green to-teal-600 text-white p-4 rounded-lg mb-6"
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 mb-2">
             <MapPin className="w-6 h-6" />
-            <div>
-              <div className="font-bold text-lg">Jumu'ah Khutbah Today</div>
-              <div className="text-sm opacity-90">
-                First Khutbah: 12:30 PM • Second Khutbah: 1:30 PM
-              </div>
+            <div className="font-bold text-lg">Jumu'ah Prayer Today</div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+              <div className="font-semibold">Jumu'ah 1</div>
+              <div className="text-teal-100">1:00 PM</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+              <div className="font-semibold">Jumu'ah 2</div>
+              <div className="text-teal-100">2:00 PM</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+              <div className="font-semibold">Jumu'ah 3</div>
+              <div className="text-teal-100">12:00 PM</div>
             </div>
           </div>
         </motion.div>

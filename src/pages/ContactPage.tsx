@@ -40,8 +40,8 @@ const ContactPage = () => {
               <Phone className="w-7 h-7 text-islamic-green" />
             </div>
             <h3 className="font-bold text-islamic-dark mb-2">Phone</h3>
-            <a href="tel:+11234567890" className="text-gray-600 hover:text-islamic-green">
-              (123) 456-7890
+            <a href="tel:+12095768149" className="text-gray-600 hover:text-islamic-green">
+              (209) 576-8149
             </a>
           </motion.div>
 
@@ -56,10 +56,10 @@ const ContactPage = () => {
             </div>
             <h3 className="font-bold text-islamic-dark mb-2">Email</h3>
             <a
-              href="mailto:info@communitymasjid.org"
+              href="mailto:info@islamicmod.org"
               className="text-gray-600 hover:text-islamic-green"
             >
-              info@communitymasjid.org
+              info@islamicmod.org
             </a>
           </motion.div>
 
@@ -74,9 +74,9 @@ const ContactPage = () => {
             </div>
             <h3 className="font-bold text-islamic-dark mb-2">Address</h3>
             <p className="text-gray-600">
-              123 Islamic Center Drive
+              1445 N Carpenter Rd
               <br />
-              Your City, State 12345
+              Modesto, CA 95358
             </p>
           </motion.div>
         </div>
@@ -92,23 +92,18 @@ const ContactPage = () => {
             <Clock className="w-8 h-8 text-islamic-green" />
             <h2 className="text-2xl font-bold text-islamic-dark">Office Hours</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             <div className="flex justify-between py-3 border-b border-gray-200">
-              <span className="font-semibold text-gray-700">Monday - Friday</span>
-              <span className="text-gray-600">9:00 AM - 5:00 PM</span>
+              <span className="font-semibold text-gray-700">Sunday - Saturday</span>
+              <span className="text-gray-600">4:45 AM - 12:00 AM (Midnight)</span>
             </div>
             <div className="flex justify-between py-3 border-b border-gray-200">
-              <span className="font-semibold text-gray-700">Saturday</span>
-              <span className="text-gray-600">10:00 AM - 4:00 PM</span>
+              <span className="font-semibold text-gray-700">Office Hours</span>
+              <span className="text-gray-600">Call for office availability</span>
             </div>
-            <div className="flex justify-between py-3 border-b border-gray-200">
-              <span className="font-semibold text-gray-700">Sunday</span>
-              <span className="text-gray-600">10:00 AM - 2:00 PM</span>
-            </div>
-            <div className="flex justify-between py-3 border-b border-gray-200">
-              <span className="font-semibold text-gray-700">Prayer Times</span>
-              <span className="text-gray-600">Always Open</span>
-            </div>
+            <p className="text-sm text-gray-600 bg-teal-50 p-3 rounded-lg">
+              The masjid is open daily from Fajr (around 4:45 AM) until midnight for prayers and community activities.
+            </p>
           </div>
         </div>
       </section>
@@ -120,14 +115,14 @@ const ContactPage = () => {
           <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
             {/* Replace with actual Google Maps embed */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095919315!2d-74.00425878428698!3d40.74076684379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.2724895562845!2d-120.99912492399654!3d37.63914092112384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809050e3edc6e587%3A0x7f8c3b3fb3c45a62!2s1445%20N%20Carpenter%20Rd%2C%20Modesto%2C%20CA%2095358!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Masjid Location"
+              title="Islamic Center of Modesto Location"
             ></iframe>
           </div>
         </div>

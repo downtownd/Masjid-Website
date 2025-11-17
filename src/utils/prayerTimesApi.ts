@@ -3,6 +3,7 @@ import { format } from 'date-fns'
 
 export interface PrayerTimesResponse {
   date: string
+  hijriDate: string
   fajr: string
   sunrise: string
   dhuhr: string
@@ -14,9 +15,22 @@ export interface PrayerTimesResponse {
 // Using Aladhan API for prayer times
 const ALADHAN_API = 'https://api.aladhan.com/v1'
 
+// Modesto, CA coordinates
+const MODESTO_LAT = 37.6391
+const MODESTO_LON = -120.9969
+
+// Convert 24-hour time to 12-hour format
+export const convertTo12Hour = (time24: string): string => {
+  const [hours, minutes] = time24.split(':')
+  const hour = parseInt(hours)
+  const ampm = hour >= 12 ? 'PM' : 'AM'
+  const hour12 = hour % 12 || 12
+  return `${hour12}:${minutes} ${ampm}`
+}
+
 export const fetchPrayerTimes = async (
-  latitude: number = 40.7128,
-  longitude: number = -74.0060,
+  latitude: number = MODESTO_LAT,
+  longitude: number = MODESTO_LON,
   method: number = 2 // Islamic Society of North America (ISNA)
 ): Promise<PrayerTimesResponse> => {
   try {
@@ -30,29 +44,47 @@ export const fetchPrayerTimes = async (
     })
 
     const timings = response.data.data.timings
+    const hijri = response.data.data.date.hijri
 
     return {
       date: response.data.data.date.readable,
-      fajr: timings.Fajr,
-      sunrise: timings.Sunrise,
-      dhuhr: timings.Dhuhr,
-      asr: timings.Asr,
-      maghrib: timings.Maghrib,
-      isha: timings.Isha,
+      hijriDate: `${hijri.day} ${hijri.month.en} ${hijri.year}`,
+      fajr: convertTo12Hour(timings.Fajr),
+      sunrise: convertTo12Hour(timings.Sunrise),
+      dhuhr: convertTo12Hour(timings.Dhuhr),
+      asr: convertTo12Hour(timings.Asr),
+      maghrib: convertTo12Hour(timings.Maghrib),
+      isha: convertTo12Hour(timings.Isha),
     }
   } catch (error) {
     console.error('Error fetching prayer times:', error)
-    // Return fallback times
+    // Return fallback times for Islamic Center of Modesto
     return {
       date: format(new Date(), 'MMMM dd, yyyy'),
-      fajr: '05:30',
-      sunrise: '06:45',
-      dhuhr: '12:30',
-      asr: '15:45',
-      maghrib: '18:30',
-      isha: '20:00',
+      hijriDate: '',
+      fajr: '5:30 AM',
+      sunrise: '6:46 AM',
+      dhuhr: '11:49 AM',
+      asr: '2:32 PM',
+      maghrib: '4:52 PM',
+      isha: '6:07 PM',
     }
   }
+}
+
+// Convert 12-hour time to minutes for comparison
+const timeToMinutes = (time: string): number => {
+  const match = time.match(/(\d+):(\d+)\s*(AM|PM)/i)
+  if (!match) return 0
+
+  let hours = parseInt(match[1])
+  const minutes = parseInt(match[2])
+  const period = match[3].toUpperCase()
+
+  if (period === 'PM' && hours !== 12) hours += 12
+  if (period === 'AM' && hours === 12) hours = 0
+
+  return hours * 60 + minutes
 }
 
 export const getCurrentPrayer = (prayerTimes: PrayerTimesResponse): string => {
@@ -69,11 +101,8 @@ export const getCurrentPrayer = (prayerTimes: PrayerTimesResponse): string => {
   ]
 
   for (let i = 0; i < prayers.length - 1; i++) {
-    const [hours, minutes] = prayers[i].time.split(':').map(Number)
-    const prayerTime = hours * 60 + minutes
-
-    const [nextHours, nextMinutes] = prayers[i + 1].time.split(':').map(Number)
-    const nextPrayerTime = nextHours * 60 + nextMinutes
+    const prayerTime = timeToMinutes(prayers[i].time)
+    const nextPrayerTime = timeToMinutes(prayers[i + 1].time)
 
     if (currentTime >= prayerTime && currentTime < nextPrayerTime) {
       return prayers[i].name
@@ -96,8 +125,7 @@ export const getNextPrayer = (prayerTimes: PrayerTimesResponse): { name: string;
   ]
 
   for (const prayer of prayers) {
-    const [hours, minutes] = prayer.time.split(':').map(Number)
-    const prayerTime = hours * 60 + minutes
+    const prayerTime = timeToMinutes(prayer.time)
 
     if (currentTime < prayerTime) {
       return prayer
@@ -109,9 +137,11 @@ export const getNextPrayer = (prayerTimes: PrayerTimesResponse): { name: string;
 
 export const getTimeUntilPrayer = (prayerTime: string): string => {
   const now = new Date()
-  const [hours, minutes] = prayerTime.split(':').map(Number)
+  const prayerMinutes = timeToMinutes(prayerTime)
 
   const prayer = new Date()
+  const hours = Math.floor(prayerMinutes / 60)
+  const minutes = prayerMinutes % 60
   prayer.setHours(hours, minutes, 0, 0)
 
   if (prayer < now) {

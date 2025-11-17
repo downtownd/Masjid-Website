@@ -48,7 +48,7 @@ const HomePage = () => {
 
             <div className="mt-12 flex items-center gap-2 text-teal-100">
               <MapPin className="w-5 h-5" />
-              <span>123 Islamic Center Drive, Your City, State 12345</span>
+              <span>1445 N Carpenter Rd, Modesto, CA 95358</span>
             </div>
           </motion.div>
         </div>
@@ -121,7 +121,7 @@ const HomePage = () => {
             >
               <h2 className="section-title">About Our Masjid</h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Established in 1995, Community Masjid has been a cornerstone of Islamic faith
+                Established in 1995, Islamic Center of Modesto has been a cornerstone of Islamic faith
                 and practice in our community. We are dedicated to fostering spiritual growth,
                 education, and social welfare for all.
               </p>

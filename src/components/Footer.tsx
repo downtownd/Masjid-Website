@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="bg-islamic-green p-2 rounded-lg">
                 <Building className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold">Community Masjid</h3>
+              <h3 className="text-xl font-bold">Islamic Center of Modesto</h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
               A place of worship, learning, and community serving families since 1995.
@@ -107,23 +107,23 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-islamic-green mt-1 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">
-                  123 Islamic Center Drive<br />
-                  Your City, State 12345
+                  1445 N Carpenter Rd<br />
+                  Modesto, CA 95358
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-islamic-green flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-gray-300 hover:text-islamic-green text-sm">
-                  (123) 456-7890
+                <a href="tel:+12095768149" className="text-gray-300 hover:text-islamic-green text-sm">
+                  (209) 576-8149
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-islamic-green flex-shrink-0" />
                 <a
-                  href="mailto:info@communitymasjid.org"
+                  href="mailto:info@islamicmod.org"
                   className="text-gray-300 hover:text-islamic-green text-sm"
                 >
-                  info@communitymasjid.org
+                  info@islamicmod.org
                 </a>
               </li>
             </ul>
@@ -132,7 +132,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Community Masjid. {t('footer.rights')}.
+            &copy; {new Date().getFullYear()} Islamic Center of Modesto. {t('footer.rights')}.
           </p>
           <p className="mt-2">
             Built with love for the Muslim community
