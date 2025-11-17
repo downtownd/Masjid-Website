@@ -42,6 +42,7 @@ export interface DonationCause {
   currentAmount: number
   category: 'masjid' | 'zakat' | 'sadaqah' | 'construction' | 'education'
   icon: string
+  paypalLink?: string
 }
 
 export interface Announcement {

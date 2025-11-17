@@ -20,24 +20,17 @@ const DonationSection = () => {
       currentAmount: 34250,
       category: 'masjid',
       icon: 'mosque',
+      paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=YTHUBQRXD6RFS',
     },
     {
-      id: 'construction',
-      title: 'Expansion Project',
-      description: 'Help us build a new prayer hall and education center',
-      goalAmount: 500000,
-      currentAmount: 342000,
-      category: 'construction',
-      icon: 'building',
-    },
-    {
-      id: 'zakat',
-      title: 'Zakat Fund',
-      description: 'Help those in need in our community',
-      goalAmount: 25000,
-      currentAmount: 18500,
-      category: 'zakat',
+      id: 'sadaqah',
+      title: 'Sadaqah Jariyah',
+      description: 'Continuous charity that benefits the community long-term',
+      goalAmount: 75000,
+      currentAmount: 42500,
+      category: 'sadaqah',
       icon: 'hand-heart',
+      paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=UJNVMATPEPCTJ',
     },
     {
       id: 'education',
@@ -47,6 +40,27 @@ const DonationSection = () => {
       currentAmount: 21750,
       category: 'education',
       icon: 'graduation-cap',
+      paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=AV7EAJWYHW28U',
+    },
+    {
+      id: 'zakat-fitr',
+      title: 'Zakat al-Fitr',
+      description: 'Obligatory charity given before Eid prayer',
+      goalAmount: 15000,
+      currentAmount: 8750,
+      category: 'zakat',
+      icon: 'hand-heart',
+      paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=K3U9FWQWM7VWG',
+    },
+    {
+      id: 'zakat-mal',
+      title: 'Zakat al-Mal',
+      description: 'Annual obligatory charity on wealth and savings',
+      goalAmount: 40000,
+      currentAmount: 28500,
+      category: 'zakat',
+      icon: 'hand-heart',
+      paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=PY3EL6LJT9EE6',
     },
   ]
 
@@ -249,7 +263,7 @@ const DonationSection = () => {
 
         {/* Donate Button */}
         <a
-          href="https://www.paypal.com/donate/?hosted_button_id=YTHUBQRXD6RFS"
+          href={selectedCauseData.paypalLink}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full btn-primary py-4 text-lg flex items-center justify-center gap-2"
