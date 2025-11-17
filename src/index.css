@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-islamic-green text-white px-6 py-3 rounded-lg font-semibold
+           hover:bg-teal-700 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-islamic-green focus:ring-offset-2
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-islamic-green border-2 border-islamic-green px-6 py-3 rounded-lg
+           font-semibold hover:bg-islamic-green hover:text-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-islamic-green focus:ring-offset-2
+           active:scale-95;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-islamic-dark mb-2;
+  }
+
+  .section-subtitle {
+    @apply text-gray-600 text-lg mb-8;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-islamic-green focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .arabic-text {
+    @apply font-arabic text-right;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid rgba(13, 148, 136, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid #0D9488;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Prayer time highlight pulse */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(13, 148, 136, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(13, 148, 136, 0.6);
+  }
+}
+
+.prayer-active {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
