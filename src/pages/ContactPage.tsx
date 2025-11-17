@@ -56,10 +56,10 @@ const ContactPage = () => {
             </div>
             <h3 className="font-bold text-islamic-dark mb-2">Email</h3>
             <a
-              href="mailto:info@islamicmod.org"
+              href="mailto:info@icomodesto.com"
               className="text-gray-600 hover:text-islamic-green"
             >
-              info@islamicmod.org
+              info@icomodesto.com
             </a>
           </motion.div>
 
