@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Building, Languages } from 'lucide-react'
+import { Menu, X, Languages } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguageStore } from '../store/languageStore'
 import { Language } from '../types'
@@ -33,9 +33,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-islamic-green p-2 rounded-lg group-hover:scale-110 transition-transform">
-              <Building className="w-6 h-6 md:w-8 md:h-8 text-white" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Islamic Center of Modesto Logo"
+              className="w-12 h-12 md:w-16 md:h-16 object-contain group-hover:scale-110 transition-transform"
+            />
             <div>
               <h1 className="text-xl md:text-2xl font-bold text-islamic-dark">
                 Islamic Center of Modesto

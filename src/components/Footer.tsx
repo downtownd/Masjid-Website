@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Building, MapPin, Phone, Mail, Facebook, Youtube, MessageCircle } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Youtube, MessageCircle } from 'lucide-react'
 import { useLanguageStore } from '../store/languageStore'
 
 const Footer = () => {
@@ -12,9 +12,11 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-islamic-green p-2 rounded-lg">
-                <Building className="w-6 h-6" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="Islamic Center of Modesto Logo"
+                className="w-12 h-12 object-contain"
+              />
               <h3 className="text-xl font-bold">Islamic Center of Modesto</h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
