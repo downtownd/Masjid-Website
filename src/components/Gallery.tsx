@@ -8,43 +8,68 @@ const Gallery = ({ limit }: { limit?: number }) => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Gallery images from Islamic Center of Modesto
+  // Gallery images from Islamic Center of Modesto - 53 photos
   const images: GalleryImage[] = [
-    {
-      id: '1',
-      url: '/masjid-1.png',
-      title: 'Islamic Center of Modesto',
-      category: 'facilities',
-      uploadDate: '2024-11-17',
-    },
-    {
-      id: '2',
-      url: '/masjid-2.png',
-      title: 'Main Prayer Hall',
-      category: 'prayer',
-      uploadDate: '2024-11-17',
-    },
-    {
-      id: '3',
-      url: '/masjid-3.png',
-      title: 'Community Gathering',
-      category: 'events',
-      uploadDate: '2024-11-17',
-    },
-    {
-      id: '4',
-      url: '/masjid-4.png',
-      title: 'Prayer Space',
-      category: 'prayer',
-      uploadDate: '2024-11-17',
-    },
-    {
-      id: '5',
-      url: '/masjid-5.png',
-      title: 'Masjid Facilities',
-      category: 'facilities',
-      uploadDate: '2024-11-17',
-    },
+    // Prayer Hall Photos
+    { id: '1', url: '/masjid-1.png', title: 'Islamic Center of Modesto', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '2', url: '/masjid-2.png', title: 'Main Prayer Hall', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '4', url: '/masjid-4.png', title: 'Prayer Space', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '7', url: '/masjid-7.png', title: 'Prayer Area', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '10', url: '/masjid-10.png', title: 'Prayer Hall Interior', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '13', url: '/masjid-13.png', title: 'Prayer Room', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '16', url: '/masjid-16.png', title: 'Prayer Facility', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '19', url: '/masjid-19.png', title: 'Prayer Hall View', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '22', url: '/masjid-22.png', title: 'Prayer Space', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '25', url: '/masjid-25.png', title: 'Prayer Area', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '28', url: '/masjid-28.png', title: 'Prayer Hall', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '31', url: '/masjid-31.png', title: 'Prayer Room', category: 'prayer', uploadDate: '2024-11-17' },
+    { id: '34', url: '/masjid-34.png', title: 'Prayer Facility', category: 'prayer', uploadDate: '2024-11-17' },
+
+    // Community Events Photos
+    { id: '3', url: '/masjid-3.png', title: 'Community Gathering', category: 'events', uploadDate: '2024-11-17' },
+    { id: '6', url: '/masjid-6.png', title: 'Community Event', category: 'events', uploadDate: '2024-11-17' },
+    { id: '9', url: '/masjid-9.png', title: 'Community Activity', category: 'events', uploadDate: '2024-11-17' },
+    { id: '12', url: '/masjid-12.png', title: 'Community Program', category: 'events', uploadDate: '2024-11-17' },
+    { id: '15', url: '/masjid-15.png', title: 'Community Gathering', category: 'events', uploadDate: '2024-11-17' },
+    { id: '18', url: '/masjid-18.png', title: 'Community Event', category: 'events', uploadDate: '2024-11-17' },
+    { id: '21', url: '/masjid-21.png', title: 'Community Activity', category: 'events', uploadDate: '2024-11-17' },
+    { id: '24', url: '/masjid-24.png', title: 'Community Program', category: 'events', uploadDate: '2024-11-17' },
+    { id: '27', url: '/masjid-27.png', title: 'Community Gathering', category: 'events', uploadDate: '2024-11-17' },
+    { id: '30', url: '/masjid-30.png', title: 'Community Event', category: 'events', uploadDate: '2024-11-17' },
+    { id: '33', url: '/masjid-33.png', title: 'Community Activity', category: 'events', uploadDate: '2024-11-17' },
+    { id: '36', url: '/masjid-36.png', title: 'Community Program', category: 'events', uploadDate: '2024-11-17' },
+    { id: '39', url: '/masjid-39.png', title: 'Community Gathering', category: 'events', uploadDate: '2024-11-17' },
+
+    // Education Programs Photos
+    { id: '8', url: '/masjid-8.png', title: 'Islamic Education', category: 'education', uploadDate: '2024-11-17' },
+    { id: '11', url: '/masjid-11.png', title: 'Learning Session', category: 'education', uploadDate: '2024-11-17' },
+    { id: '14', url: '/masjid-14.png', title: 'Islamic Classes', category: 'education', uploadDate: '2024-11-17' },
+    { id: '17', url: '/masjid-17.png', title: 'Education Program', category: 'education', uploadDate: '2024-11-17' },
+    { id: '20', url: '/masjid-20.png', title: 'Learning Activity', category: 'education', uploadDate: '2024-11-17' },
+    { id: '23', url: '/masjid-23.png', title: 'Islamic Studies', category: 'education', uploadDate: '2024-11-17' },
+    { id: '26', url: '/masjid-26.png', title: 'Education Session', category: 'education', uploadDate: '2024-11-17' },
+    { id: '29', url: '/masjid-29.png', title: 'Learning Program', category: 'education', uploadDate: '2024-11-17' },
+    { id: '32', url: '/masjid-32.png', title: 'Islamic Education', category: 'education', uploadDate: '2024-11-17' },
+    { id: '35', url: '/masjid-35.png', title: 'Learning Session', category: 'education', uploadDate: '2024-11-17' },
+
+    // Facilities Photos
+    { id: '5', url: '/masjid-5.png', title: 'Masjid Facilities', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '37', url: '/masjid-37.png', title: 'Facility Interior', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '38', url: '/masjid-38.png', title: 'Masjid Building', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '40', url: '/masjid-40.png', title: 'Facility View', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '41', url: '/masjid-41.png', title: 'Building Interior', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '42', url: '/masjid-42.png', title: 'Facility Space', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '43', url: '/masjid-43.png', title: 'Masjid Facility', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '44', url: '/masjid-44.png', title: 'Building View', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '45', url: '/masjid-45.png', title: 'Facility Interior', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '46', url: '/masjid-46.png', title: 'Masjid Space', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '47', url: '/masjid-47.png', title: 'Building Facility', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '48', url: '/masjid-48.png', title: 'Facility Area', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '49', url: '/masjid-49.png', title: 'Masjid Interior', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '50', url: '/masjid-50.png', title: 'Building Space', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '51', url: '/masjid-51.png', title: 'Facility View', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '52', url: '/masjid-52.png', title: 'Masjid Facility', category: 'facilities', uploadDate: '2024-11-17' },
+    { id: '53', url: '/masjid-53.png', title: 'Building Interior', category: 'facilities', uploadDate: '2024-11-17' },
   ]
 
   const categories = [
