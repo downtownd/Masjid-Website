@@ -1,40 +1,8 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Youtube, Radio, Play } from 'lucide-react'
+import { Youtube, Radio, Play, Video } from 'lucide-react'
 
 const LiveStream = () => {
   const [activeTab, setActiveTab] = useState<'live' | 'recordings'>('live')
-
-  // Mock data - would come from API/CMS
-  const recordedKhutbahs = [
-    {
-      id: '1',
-      title: 'The Importance of Prayer in Our Daily Lives',
-      speaker: 'Sheikh Ahmed Khan',
-      date: 'March 8, 2024',
-      duration: '45:32',
-      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-      videoId: 'dQw4w9WgXcQ',
-    },
-    {
-      id: '2',
-      title: 'Seeking Knowledge in Islam',
-      speaker: 'Dr. Fatima Hassan',
-      date: 'March 1, 2024',
-      duration: '52:18',
-      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-      videoId: 'dQw4w9WgXcQ',
-    },
-    {
-      id: '3',
-      title: 'Building Strong Muslim Families',
-      speaker: 'Imam Abdullah Rahman',
-      date: 'February 23, 2024',
-      duration: '38:45',
-      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-      videoId: 'dQw4w9WgXcQ',
-    },
-  ]
 
   return (
     <div className="card">
@@ -79,76 +47,126 @@ const LiveStream = () => {
 
       {activeTab === 'live' ? (
         <div>
-          {/* Live Stream Embed */}
+          {/* Live Stream Embed - Islamic Center of Modesto */}
           <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-900 mb-4">
-            {/* Replace with your actual YouTube live stream embed */}
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID"
-              title="Live Stream"
+              src="https://www.youtube.com/embed/live_stream?channel=UCxqmXLzYMaG8wKGOPBK3lzg"
+              title="Islamic Center of Modesto Live Stream"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <div className="flex items-center gap-2 mb-2">
+          <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-lg p-6">
+            <div className="flex items-center gap-3 mb-3">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
-                <span className="font-bold text-red-600">LIVE</span>
+                <span className="font-bold text-red-600 text-lg">LIVE STREAM</span>
               </div>
-              <span className="text-gray-600">|</span>
-              <span className="text-gray-700 font-medium">Jumu'ah Khutbah</span>
             </div>
-            <p className="text-sm text-gray-600">
-              Join us for today's Jumu'ah prayer. Stream starts at 12:30 PM EST
+            <h3 className="text-xl font-bold text-islamic-dark mb-2">
+              Islamic Center of Modesto
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Watch live when we're streaming! Includes Jumu'ah prayers, special lectures, and community events.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3">
+                <div className="font-semibold text-islamic-dark">Jumu'ah 1</div>
+                <div className="text-gray-600">Fridays at 1:00 PM</div>
+              </div>
+              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3">
+                <div className="font-semibold text-islamic-dark">Jumu'ah 2</div>
+                <div className="text-gray-600">Fridays at 2:00 PM</div>
+              </div>
+              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3">
+                <div className="font-semibold text-islamic-dark">Jumu'ah 3</div>
+                <div className="text-gray-600">Fridays at 12:00 PM</div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-600 mt-4 italic">
+              * If the stream is not live, it will show our most recent broadcast
             </p>
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recordedKhutbahs.map((khutbah, index) => (
-            <motion.div
-              key={khutbah.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-video rounded-xl overflow-hidden mb-3">
-                <img
-                  src={khutbah.thumbnail}
-                  alt={khutbah.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                  <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-8 h-8 text-white ml-1" fill="white" />
-                  </div>
+        <div>
+          {/* YouTube Videos & Recordings Section */}
+          <div className="bg-gradient-to-br from-gray-50 to-teal-50 rounded-xl p-8 border border-gray-200 text-center">
+            <Video className="w-16 h-16 mx-auto text-islamic-green mb-4" />
+            <h3 className="text-2xl font-bold text-islamic-dark mb-3">
+              Video Library
+            </h3>
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Watch our collection of recorded khutbahs, lectures, special events, and educational content on our YouTube channel.
+            </p>
+
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <a
+                href="https://www.youtube.com/@icomodesto/streams"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center justify-center gap-2"
+              >
+                <Radio className="w-5 h-5" />
+                View Past Streams
+              </a>
+              <a
+                href="https://www.youtube.com/@icomodesto/videos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center justify-center gap-2"
+              >
+                <Video className="w-5 h-5" />
+                Browse All Videos
+              </a>
+            </div>
+
+            {/* Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mb-3">
+                  <Radio className="w-6 h-6 text-red-600" />
                 </div>
-                <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
-                  {khutbah.duration}
-                </div>
+                <h4 className="font-bold text-islamic-dark mb-1">Live Streams</h4>
+                <p className="text-sm text-gray-600">
+                  All Jumu'ah prayers and special events recorded
+                </p>
               </div>
-              <h3 className="font-bold text-islamic-dark mb-1 group-hover:text-islamic-green transition-colors line-clamp-2">
-                {khutbah.title}
-              </h3>
-              <p className="text-sm text-gray-600 mb-1">{khutbah.speaker}</p>
-              <p className="text-xs text-gray-500">{khutbah.date}</p>
-            </motion.div>
-          ))}
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                  <Video className="w-6 h-6 text-green-600" />
+                </div>
+                <h4 className="font-bold text-islamic-dark mb-1">Khutbahs</h4>
+                <p className="text-sm text-gray-600">
+                  Weekly Islamic lectures and Friday sermons
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <Play className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className="font-bold text-islamic-dark mb-1">Education</h4>
+                <p className="text-sm text-gray-600">
+                  Islamic education and community programs
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
       <div className="mt-6 text-center">
         <a
-          href="https://youtube.com/@yourchannel"
+          href="https://www.youtube.com/@icomodesto"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-islamic-green hover:text-teal-700 font-semibold transition-colors"
         >
           <Youtube className="w-5 h-5" />
-          View all on YouTube
+          Subscribe on YouTube @icomodesto
         </a>
       </div>
     </div>
