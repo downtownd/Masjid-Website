@@ -50,7 +50,7 @@ const ServicesPage = () => {
         'Nikah ceremonies, premarital counseling, and marriage support services.',
       icon: 'marriage',
       contactEmail: 'imam@icomodesto.org',
-      contactPhone: '(123) 456-7890',
+      contactPhone: '(209) 576-8149',
     },
     {
       id: '5',
@@ -93,7 +93,7 @@ const ServicesPage = () => {
       icon: 'internship',
       contactEmail: 'internship@icomodesto.org',
       availability: 'Year-round',
-      contactPhone: '(123) 456-7890',
+      contactPhone: '(209) 576-8149',
     },
   ]
 
@@ -203,7 +203,7 @@ const ServicesPage = () => {
             of our programs, please don't hesitate to reach out to us.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="tel:+11234567890" className="btn-primary">
+            <a href="tel:+12095768149" className="btn-primary">
               Call Us
             </a>
             <a href="/contact" className="btn-secondary">
