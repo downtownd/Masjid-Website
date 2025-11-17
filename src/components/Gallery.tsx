@@ -8,63 +8,42 @@ const Gallery = ({ limit }: { limit?: number }) => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Mock gallery data
+  // Gallery images from Islamic Center of Modesto
   const images: GalleryImage[] = [
     {
       id: '1',
-      url: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800',
-      title: 'Main Prayer Hall',
-      category: 'prayer',
-      uploadDate: '2024-03-10',
+      url: '/masjid-1.png',
+      title: 'Islamic Center of Modesto',
+      category: 'facilities',
+      uploadDate: '2024-11-17',
     },
     {
       id: '2',
-      url: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800',
-      title: 'Quran Collection',
-      category: 'education',
-      uploadDate: '2024-03-08',
+      url: '/masjid-2.png',
+      title: 'Main Prayer Hall',
+      category: 'prayer',
+      uploadDate: '2024-11-17',
     },
     {
       id: '3',
-      url: 'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=800',
-      title: 'Prayer Hall Interior',
-      category: 'facilities',
-      uploadDate: '2024-03-05',
+      url: '/masjid-3.png',
+      title: 'Community Gathering',
+      category: 'events',
+      uploadDate: '2024-11-17',
     },
     {
       id: '4',
-      url: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800',
-      title: 'Islamic Architecture',
-      category: 'events',
-      uploadDate: '2024-03-03',
+      url: '/masjid-4.png',
+      title: 'Prayer Space',
+      category: 'prayer',
+      uploadDate: '2024-11-17',
     },
     {
       id: '5',
-      url: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800',
-      title: 'Mosque Dome',
-      category: 'events',
-      uploadDate: '2024-03-01',
-    },
-    {
-      id: '6',
-      url: 'https://images.unsplash.com/photo-1584195825196-b04e8ac96a74?w=800',
-      title: 'Prayer Space',
-      category: 'prayer',
-      uploadDate: '2024-02-28',
-    },
-    {
-      id: '7',
-      url: 'https://images.unsplash.com/photo-1609599006353-e12d3d0f2c25?w=800',
-      title: 'Islamic Library',
-      category: 'education',
-      uploadDate: '2024-02-25',
-    },
-    {
-      id: '8',
-      url: 'https://images.unsplash.com/photo-1564769610890-1c0e8f8f0a1e?w=800',
-      title: 'Reading Room',
+      url: '/masjid-5.png',
+      title: 'Masjid Facilities',
       category: 'facilities',
-      uploadDate: '2024-02-20',
+      uploadDate: '2024-11-17',
     },
   ]
 

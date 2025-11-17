@@ -19,7 +19,7 @@ const HomePage = () => {
     <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-islamic-green via-teal-600 to-emerald-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1920')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/masjid-1.png')] bg-cover bg-center opacity-20"></div>
         <div className="relative container-custom py-20 md:py-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -143,23 +143,23 @@ const HomePage = () => {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=500"
-                alt="Prayer Hall"
+                src="/masjid-2.png"
+                alt="Islamic Center of Modesto - Prayer Hall"
                 className="rounded-xl shadow-lg w-full h-48 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500"
-                alt="Islamic Books"
+                src="/masjid-3.png"
+                alt="Islamic Center of Modesto - Community"
                 className="rounded-xl shadow-lg w-full h-48 object-cover mt-8"
               />
               <img
-                src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=500"
-                alt="Mosque Architecture"
+                src="/masjid-4.png"
+                alt="Islamic Center of Modesto - Facilities"
                 className="rounded-xl shadow-lg w-full h-48 object-cover -mt-8"
               />
               <img
-                src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=500"
-                alt="Prayer Space"
+                src="/masjid-5.png"
+                alt="Islamic Center of Modesto - Interior"
                 className="rounded-xl shadow-lg w-full h-48 object-cover"
               />
             </motion.div>
