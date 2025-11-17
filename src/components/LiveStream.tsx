@@ -47,48 +47,78 @@ const LiveStream = () => {
 
       {activeTab === 'live' ? (
         <div>
-          {/* Live Stream Embed - Islamic Center of Modesto */}
-          <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-900 mb-4">
+          {/* Live Stream Section - Islamic Center of Modesto */}
+          <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-xl p-8 mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+                <span className="font-bold text-red-600 text-lg">CHECK IF WE'RE LIVE</span>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-islamic-dark mb-3">
+              Islamic Center of Modesto Live Stream
+            </h3>
+            <p className="text-gray-700 mb-6">
+              Watch our live broadcasts on YouTube! We stream Jumu'ah prayers, special lectures, and community events.
+            </p>
+
+            {/* Jumu'ah Schedule */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="font-semibold text-islamic-dark">Jumu'ah 1</div>
+                <div className="text-gray-600">Fridays at 12:00 PM</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="font-semibold text-islamic-dark">Jumu'ah 2</div>
+                <div className="text-gray-600">Fridays at 1:00 PM</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="font-semibold text-islamic-dark">Jumu'ah 3</div>
+                <div className="text-gray-600">Fridays at 2:00 PM</div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://www.youtube.com/@icomodesto/live"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg"
+              >
+                <Radio className="w-5 h-5" />
+                Watch Live on YouTube
+              </a>
+              <a
+                href="https://www.youtube.com/@icomodesto/streams"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 bg-white hover:bg-gray-50 text-islamic-dark font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg border-2 border-gray-200"
+              >
+                <Play className="w-5 h-5" />
+                View Past Streams
+              </a>
+            </div>
+
+            <p className="text-sm text-gray-600 mt-6 text-center">
+              Click "Watch Live on YouTube" to see if we're currently streaming. If not live, you'll see our channel page.
+            </p>
+          </div>
+
+          {/* Embedded YouTube Channel */}
+          <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-900 shadow-2xl">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/live_stream?channel=UCxqmXLzYMaG8wKGOPBK3lzg"
-              title="Islamic Center of Modesto Live Stream"
+              src="https://www.youtube.com/embed?listType=user_uploads&list=icomodesto"
+              title="Islamic Center of Modesto - Latest Videos"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
           </div>
-          <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-lg p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
-                <span className="font-bold text-red-600 text-lg">LIVE STREAM</span>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-islamic-dark mb-2">
-              Islamic Center of Modesto
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Watch live when we're streaming! Includes Jumu'ah prayers, special lectures, and community events.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3">
-                <div className="font-semibold text-islamic-dark">Jumu'ah 1</div>
-                <div className="text-gray-600">Fridays at 1:00 PM</div>
-              </div>
-              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3">
-                <div className="font-semibold text-islamic-dark">Jumu'ah 2</div>
-                <div className="text-gray-600">Fridays at 2:00 PM</div>
-              </div>
-              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-3">
-                <div className="font-semibold text-islamic-dark">Jumu'ah 3</div>
-                <div className="text-gray-600">Fridays at 12:00 PM</div>
-              </div>
-            </div>
-            <p className="text-xs text-gray-600 mt-4 italic">
-              * If the stream is not live, it will show our most recent broadcast
-            </p>
-          </div>
+          <p className="text-sm text-gray-500 text-center mt-3">
+            Latest uploads from Islamic Center of Modesto
+          </p>
         </div>
       ) : (
         <div>
