@@ -62,6 +62,16 @@ const DonationSection = () => {
       icon: 'hand-heart',
       paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=PY3EL6LJT9EE6',
     },
+    {
+      id: 'udhiyah',
+      title: 'Udhiyah (Qurban)',
+      description: 'Sacrifice during Eid al-Adha to help those in need',
+      goalAmount: 25000,
+      currentAmount: 12300,
+      category: 'sadaqah',
+      icon: 'hand-heart',
+      paypalLink: 'https://www.paypal.com/donate/?hosted_button_id=YTHUBQRXD6RFS',
+    },
   ]
 
   const predefinedAmounts = [25, 50, 100, 250, 500, 1000]
@@ -94,7 +104,7 @@ const DonationSection = () => {
   return (
     <div className="max-w-6xl mx-auto">
       {/* Causes Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {causes.map((cause, index) => {
           const progress = getProgress(cause)
           return (
