@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +10,12 @@
   }
 
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-gradient-to-br from-islamic-dark via-islamic-dark-blue to-islamic-dark text-islamic-cream;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
   }
 }
 
@@ -17,48 +24,199 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Glassmorphism Effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 107, 63, 0.15);
+  }
+
+  .glass-dark {
+    background: rgba(10, 14, 39, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Premium Buttons with Gradient Borders */
   .btn-primary {
-    @apply bg-islamic-green text-white px-6 py-3 rounded-lg font-semibold
-           hover:bg-teal-700 transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-islamic-green focus:ring-offset-2
-           active:scale-95;
+    @apply relative overflow-hidden px-8 py-4 rounded-lg font-semibold text-white;
+    background: linear-gradient(135deg, #006B3F 0%, #00A86B 100%);
+    box-shadow: 0 4px 15px rgba(0, 107, 63, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #00A86B 0%, #006B3F 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-primary:hover::before {
+    opacity: 1;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 107, 63, 0.6);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary span {
+    position: relative;
+    z-index: 1;
   }
 
   .btn-secondary {
-    @apply bg-white text-islamic-green border-2 border-islamic-green px-6 py-3 rounded-lg
-           font-semibold hover:bg-islamic-green hover:text-white transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-islamic-green focus:ring-offset-2
-           active:scale-95;
+    @apply relative px-8 py-4 rounded-lg font-semibold text-islamic-green-light border-2 border-islamic-green;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .btn-secondary:hover {
+    background: linear-gradient(135deg, #006B3F 0%, #00A86B 100%);
+    @apply text-white border-transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 107, 63, 0.4);
+  }
+
+  .btn-gold {
+    @apply relative overflow-hidden px-8 py-4 rounded-lg font-semibold;
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+    color: #0a0e27;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+  }
+
+  /* 3D Transform Cards */
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200;
+    @apply rounded-2xl p-6;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 40px rgba(0, 107, 63, 0.3);
+    border-color: rgba(0, 168, 107, 0.3);
+  }
+
+  .card-3d {
+    perspective: 1000px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+  }
+
+  /* Prayer Card with Glow */
+  .prayer-card {
+    @apply card;
+    position: relative;
+  }
+
+  .prayer-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #006B3F, #00A86B, #D4AF37, #00A86B, #006B3F);
+    border-radius: inherit;
+    opacity: 0;
+    z-index: -1;
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+    transition: opacity 0.3s;
+  }
+
+  .prayer-card:hover::before {
+    opacity: 1;
+  }
+
+  .prayer-card-active {
+    animation: glow 2s ease-in-out infinite;
+    border: 2px solid rgba(0, 168, 107, 0.6);
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-islamic-dark mb-2;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+    background: linear-gradient(135deg, #00A86B 0%, #D4AF37 50%, #00A86B 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 4s ease infinite;
   }
 
   .section-subtitle {
-    @apply text-gray-600 text-lg mb-8;
+    @apply text-islamic-cream/80 text-lg md:text-xl mb-8;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg
-           focus:outline-none focus:ring-2 focus:ring-islamic-green focus:border-transparent
-           transition-all duration-200;
+    @apply w-full px-4 py-3 rounded-lg glass border border-islamic-green/30;
+    @apply focus:outline-none focus:border-islamic-green focus:ring-2 focus:ring-islamic-green/50;
+    @apply transition-all duration-200;
+    color: #F5F5DC;
+  }
+
+  .input-field::placeholder {
+    color: rgba(245, 245, 220, 0.5);
   }
 
   .arabic-text {
     @apply font-arabic text-right;
   }
+
+  /* Animated Gradient Background */
+  .gradient-mesh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #003366 50%, #1a1f3a 75%, #0a0e27 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
 }
 
-/* Custom animations */
+/* Custom Advanced Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -67,7 +225,7 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slideDown {
@@ -82,17 +240,176 @@
 }
 
 .animate-slideDown {
-  animation: slideDown 0.3s ease-out;
+  animation: slideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Loading spinner */
-.spinner {
-  border: 3px solid rgba(13, 148, 136, 0.1);
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Floating Animation for Patterns */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(3deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 107, 63, 0.4), 0 0 40px rgba(0, 168, 107, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 107, 63, 0.8), 0 0 80px rgba(0, 168, 107, 0.4);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Pulse Scale */
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-scale {
+  animation: pulseScale 2s ease-in-out infinite;
+}
+
+/* Ripple Effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
   border-radius: 50%;
-  border-top: 3px solid #0D9488;
-  width: 40px;
-  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Loading Spinner with Islamic Pattern */
+.spinner {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.spinner::before,
+.spinner::after {
+  content: '';
+  position: absolute;
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+
+.spinner::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top-color: #006B3F;
   animation: spin 1s linear infinite;
+}
+
+.spinner::after {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top-color: #D4AF37;
+  animation: spin 1.5s linear infinite reverse;
 }
 
 @keyframes spin {
@@ -103,13 +420,44 @@
 /* Prayer time highlight pulse */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(13, 148, 136, 0.4);
+    box-shadow: 0 0 20px rgba(0, 107, 63, 0.4);
   }
   50% {
-    box-shadow: 0 0 30px rgba(13, 148, 136, 0.6);
+    box-shadow: 0 0 40px rgba(0, 107, 63, 0.8), 0 0 60px rgba(212, 175, 55, 0.4);
   }
 }
 
 .prayer-active {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Stagger Animation Utility */
+.stagger-item {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax Layer */
+.parallax-layer {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }

@@ -20,14 +20,51 @@ export default {
           900: '#14532d',
         },
         islamic: {
-          green: '#0D9488',
+          green: '#006B3F',
+          'green-light': '#00A86B',
           gold: '#D4AF37',
-          dark: '#1E293B',
+          'royal-blue': '#003366',
+          cream: '#F5F5DC',
+          dark: '#0a0e27',
+          'dark-blue': '#1a1f3a',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        arabic: ['Amiri', 'serif'],
+        sans: ['Inter', 'Nunito Sans', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'Cormorant Garamond', 'serif'],
+        arabic: ['Amiri', 'Scheherazade', 'serif'],
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      animation: {
+        'gradient': 'gradient 8s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'scale-in': 'scaleIn 0.3s ease-out',
+      },
+      keyframes: {
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        glow: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 107, 63, 0.4)' },
+          '50%': { boxShadow: '0 0 40px rgba(0, 107, 63, 0.8)' },
+        },
+        slideUp: {
+          from: { opacity: '0', transform: 'translateY(30px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          from: { opacity: '0', transform: 'scale(0.9)' },
+          to: { opacity: '1', transform: 'scale(1)' },
+        },
       },
     },
   },
