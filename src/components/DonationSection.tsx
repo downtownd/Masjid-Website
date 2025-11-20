@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Heart, TrendingUp, Building, GraduationCap, DollarSign } from 'lucide-react'
 import { DonationCause } from '../types'
 import { useLanguageStore } from '../store/languageStore'
@@ -104,58 +104,75 @@ const DonationSection = () => {
   return (
     <div className="max-w-6xl mx-auto">
       {/* Causes Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
         {causes.map((cause, index) => {
           const progress = getProgress(cause)
+          const isSelected = selectedCause === cause.id
+
           return (
             <motion.div
               key={cause.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               onClick={() => setSelectedCause(cause.id)}
               className={`
-                cursor-pointer p-6 rounded-xl border-2 transition-all duration-200
+                cursor-pointer rounded-2xl p-6 transition-all duration-300
                 ${
-                  selectedCause === cause.id
-                    ? 'border-islamic-green bg-gradient-to-br from-islamic-green/10 to-teal-50 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-islamic-green/50 hover:shadow-md'
+                  isSelected
+                    ? 'glass-strong border-2 border-islamic-gold shadow-2xl'
+                    : 'glass border border-islamic-green/20 hover:border-islamic-green/50'
                 }
               `}
             >
-              <div className="flex items-start justify-between mb-3">
-                <div
+              <div className="flex items-start justify-between mb-4">
+                <motion.div
                   className={`
-                  p-3 rounded-lg transition-colors
-                  ${selectedCause === cause.id ? 'bg-islamic-green text-white' : 'bg-gray-100 text-islamic-green'}
-                `}
+                    p-3 rounded-xl transition-all duration-300
+                    ${
+                      isSelected
+                        ? 'bg-gradient-to-br from-islamic-gold to-yellow-500 text-islamic-dark'
+                        : 'bg-gradient-to-br from-islamic-green to-islamic-green-light text-white'
+                    }
+                  `}
+                  animate={{ rotate: isSelected ? 360 : 0 }}
+                  transition={{ duration: 0.6 }}
                 >
                   {getIcon(cause.icon)}
-                </div>
+                </motion.div>
                 {progress >= 100 && (
-                  <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                  <span className="bg-gradient-to-r from-islamic-green to-islamic-green-light text-white text-xs px-3 py-1.5 rounded-full font-bold">
                     Funded!
                   </span>
                 )}
               </div>
 
-              <h3 className="font-bold text-islamic-dark mb-2 text-sm">{cause.title}</h3>
-              <p className="text-xs text-gray-600 mb-3 line-clamp-2">{cause.description}</p>
+              <h3 className="font-bold text-islamic-cream text-lg mb-2">{cause.title}</h3>
+              <p className="text-sm text-islamic-cream/70 mb-4 line-clamp-2">{cause.description}</p>
 
               <div className="mb-2">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-gray-600">{progress}%</span>
-                  <span className="font-semibold text-islamic-green">
+                <div className="flex justify-between text-sm mb-2">
+                  <span className="text-islamic-cream/60">{progress}%</span>
+                  <span className="font-bold text-islamic-gold">
                     {formatCurrency(cause.currentAmount)}
                   </span>
                 </div>
-                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-islamic-green to-teal-500 transition-all duration-500"
-                    style={{ width: `${Math.min(progress, 100)}%` }}
-                  />
+
+                {/* Animated Progress Bar */}
+                <div className="h-3 bg-islamic-dark/30 rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full bg-gradient-to-r from-islamic-gold via-islamic-green to-islamic-green-light relative overflow-hidden"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${Math.min(progress, 100)}%` }}
+                    transition={{ duration: 1, delay: index * 0.1, ease: 'easeOut' }}
+                  >
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 shimmer" />
+                  </motion.div>
                 </div>
-                <div className="text-right text-xs text-gray-500 mt-1">
+
+                <div className="text-right text-xs text-islamic-cream/50 mt-1.5">
                   Goal: {formatCurrency(cause.goalAmount)}
                 </div>
               </div>
@@ -165,128 +182,163 @@ const DonationSection = () => {
       </div>
 
       {/* Donation Form */}
-      <motion.div
-        key={selectedCause}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="card"
-      >
-        <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-islamic-dark mb-2">
-            {selectedCauseData.title}
-          </h2>
-          <p className="text-gray-600">{selectedCauseData.description}</p>
-        </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={selectedCause}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="glass-strong rounded-3xl p-8 md:p-10"
+        >
+          <div className="text-center mb-8">
+            <motion.h2
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-3xl md:text-4xl font-serif font-bold text-islamic-cream mb-3"
+            >
+              {selectedCauseData.title}
+            </motion.h2>
+            <p className="text-islamic-cream/80 text-lg">{selectedCauseData.description}</p>
+          </div>
 
-        {/* Donation Type Toggle */}
-        <div className="flex gap-2 mb-6 bg-gray-100 p-1 rounded-lg">
-          <button
-            onClick={() => setDonationType('one-time')}
-            className={`
-              flex-1 py-3 rounded-lg font-semibold transition-all duration-200
-              ${
-                donationType === 'one-time'
-                  ? 'bg-white text-islamic-green shadow-md'
-                  : 'text-gray-600 hover:text-islamic-green'
-              }
-            `}
-          >
-            {t('donate.oneTime')}
-          </button>
-          <button
-            onClick={() => setDonationType('monthly')}
-            className={`
-              flex-1 py-3 rounded-lg font-semibold transition-all duration-200
-              ${
-                donationType === 'monthly'
-                  ? 'bg-white text-islamic-green shadow-md'
-                  : 'text-gray-600 hover:text-islamic-green'
-              }
-            `}
-          >
-            {t('donate.monthly')}
-          </button>
-        </div>
-
-        {/* Amount Selection */}
-        <div className="grid grid-cols-3 gap-3 mb-6">
-          {predefinedAmounts.map((amount) => (
-            <button
-              key={amount}
-              onClick={() => {
-                setSelectedAmount(amount)
-                setCustomAmount('')
-              }}
+          {/* Donation Type Toggle */}
+          <div className="flex gap-3 mb-8 glass p-2 rounded-xl">
+            <motion.button
+              onClick={() => setDonationType('one-time')}
               className={`
-                py-4 rounded-lg font-bold text-lg transition-all duration-200
+                flex-1 py-4 rounded-lg font-semibold transition-all duration-300
                 ${
-                  selectedAmount === amount && !customAmount
-                    ? 'bg-islamic-green text-white shadow-lg scale-105'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  donationType === 'one-time'
+                    ? 'bg-gradient-to-r from-islamic-green to-islamic-green-light text-white shadow-lg'
+                    : 'text-islamic-cream/70 hover:text-islamic-cream'
                 }
               `}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              ${amount}
-            </button>
-          ))}
-        </div>
-
-        {/* Custom Amount */}
-        <div className="mb-6">
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            {t('donate.customAmount')}
-          </label>
-          <div className="relative">
-            <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
-              type="number"
-              value={customAmount}
-              onChange={(e) => {
-                setCustomAmount(e.target.value)
-                setSelectedAmount(0)
-              }}
-              placeholder="Enter amount"
-              className="input-field pl-12 text-lg"
-            />
+              {t('donate.oneTime')}
+            </motion.button>
+            <motion.button
+              onClick={() => setDonationType('monthly')}
+              className={`
+                flex-1 py-4 rounded-lg font-semibold transition-all duration-300
+                ${
+                  donationType === 'monthly'
+                    ? 'bg-gradient-to-r from-islamic-green to-islamic-green-light text-white shadow-lg'
+                    : 'text-islamic-cream/70 hover:text-islamic-cream'
+                }
+              `}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {t('donate.monthly')}
+            </motion.button>
           </div>
-        </div>
 
-        {/* Impact Message */}
-        <div className="bg-gradient-to-r from-teal-50 to-green-50 p-4 rounded-lg mb-6 border border-islamic-green/20">
-          <div className="flex items-start gap-3">
-            <TrendingUp className="w-5 h-5 text-islamic-green mt-1 flex-shrink-0" />
-            <div>
-              <p className="font-semibold text-islamic-dark mb-1">Your Impact</p>
-              <p className="text-sm text-gray-700">
-                {donationType === 'monthly'
-                  ? `Your monthly donation of $${customAmount || selectedAmount} will contribute $${
-                      (parseInt(customAmount) || selectedAmount) * 12
-                    } annually to ${selectedCauseData.title.toLowerCase()}`
-                  : `Your donation will help us get ${(
-                      ((parseInt(customAmount) || selectedAmount) / selectedCauseData.goalAmount) *
-                      100
-                    ).toFixed(1)}% closer to our goal`}
-              </p>
+          {/* Amount Selection with Ripple Effect */}
+          <div className="grid grid-cols-3 gap-4 mb-8">
+            {predefinedAmounts.map((amount, index) => {
+              const isSelected = selectedAmount === amount && !customAmount
+
+              return (
+                <motion.button
+                  key={amount}
+                  onClick={() => {
+                    setSelectedAmount(amount)
+                    setCustomAmount('')
+                  }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`
+                    relative py-5 rounded-xl font-bold text-xl transition-all duration-300 ripple-effect
+                    ${
+                      isSelected
+                        ? 'bg-gradient-to-br from-islamic-gold to-yellow-500 text-islamic-dark shadow-2xl'
+                        : 'glass hover:glass-strong text-islamic-cream'
+                    }
+                  `}
+                >
+                  ${amount}
+                </motion.button>
+              )
+            })}
+          </div>
+
+          {/* Custom Amount */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8"
+          >
+            <label className="block text-sm font-semibold text-islamic-cream mb-3">
+              {t('donate.customAmount')}
+            </label>
+            <div className="relative">
+              <DollarSign className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-islamic-gold" />
+              <input
+                type="number"
+                value={customAmount}
+                onChange={(e) => {
+                  setCustomAmount(e.target.value)
+                  setSelectedAmount(0)
+                }}
+                placeholder="Enter amount"
+                className="input-field pl-14 text-xl py-4"
+              />
             </div>
-          </div>
-        </div>
+          </motion.div>
 
-        {/* Donate Button */}
-        <a
-          href={selectedCauseData.paypalLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full btn-primary py-4 text-lg flex items-center justify-center gap-2"
-        >
-          <Heart className="w-5 h-5" />
-          {t('donate.donateNow')} ${customAmount || selectedAmount}
-          {donationType === 'monthly' && '/month'}
-        </a>
+          {/* Impact Message */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass rounded-xl p-6 mb-8 border border-islamic-green/30"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-islamic-gold to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <TrendingUp className="w-6 h-6 text-islamic-dark" />
+              </div>
+              <div>
+                <p className="font-bold text-islamic-cream mb-2 text-lg">Your Impact</p>
+                <p className="text-sm text-islamic-cream/80 leading-relaxed">
+                  {donationType === 'monthly'
+                    ? `Your monthly donation of $${customAmount || selectedAmount} will contribute $${
+                        (parseInt(customAmount) || selectedAmount) * 12
+                      } annually to ${selectedCauseData.title.toLowerCase()}`
+                    : `Your donation will help us get ${(
+                        ((parseInt(customAmount) || selectedAmount) / selectedCauseData.goalAmount) *
+                        100
+                      ).toFixed(1)}% closer to our goal`}
+                </p>
+              </div>
+            </div>
+          </motion.div>
 
-        <p className="text-center text-sm text-gray-600 mt-4">
-          All donations are tax-deductible. You'll receive a receipt via email.
-        </p>
-      </motion.div>
+          {/* Donate Button */}
+          <motion.a
+            href={selectedCauseData.paypalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full btn-gold py-5 text-xl flex items-center justify-center gap-3 ripple-effect block text-center"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Heart className="w-6 h-6" />
+            <span>
+              {t('donate.donateNow')} ${customAmount || selectedAmount}
+              {donationType === 'monthly' && '/month'}
+            </span>
+          </motion.a>
+
+          <p className="text-center text-sm text-islamic-cream/60 mt-5">
+            All donations are tax-deductible. You'll receive a receipt via email.
+          </p>
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 }
