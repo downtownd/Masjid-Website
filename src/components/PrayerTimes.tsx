@@ -161,13 +161,13 @@ const PrayerTimes = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-islamic-cream flex items-center gap-3 mb-3">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 flex items-center gap-3 mb-3">
             <Clock className="w-8 h-8 text-islamic-gold" />
             {t('prayer.times')}
           </h2>
-          <p className="text-islamic-cream/80 text-lg">{prayerTimes.date}</p>
+          <p className="text-gray-900/80 text-lg">{prayerTimes.date}</p>
           {prayerTimes.hijriDate && (
-            <p className="text-sm text-islamic-cream/60 font-arabic mt-1">
+            <p className="text-sm text-gray-900/60 font-arabic mt-1">
               {prayerTimes.hijriDate} AH
             </p>
           )}
@@ -180,7 +180,7 @@ const PrayerTimes = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center glass rounded-2xl p-6"
         >
-          <div className="text-sm text-islamic-cream/70 mb-2">{t('prayer.nextPrayer')}</div>
+          <div className="text-sm text-gray-900/70 mb-2">{t('prayer.nextPrayer')}</div>
           <div className="text-xl font-bold text-islamic-gold mb-4">{nextPrayer.name}</div>
 
           {/* Circular Progress */}
@@ -188,7 +188,7 @@ const PrayerTimes = () => {
             <CircularProgress progress={progress} />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-2xl font-bold text-islamic-cream">{timeUntilNext}</div>
+                <div className="text-2xl font-bold text-gray-900">{timeUntilNext}</div>
               </div>
             </div>
           </div>
@@ -289,19 +289,19 @@ const PrayerTimes = () => {
 
                 {/* Prayer Name */}
                 <div className="mb-3">
-                  <h3 className="text-xl font-bold text-islamic-cream mb-1">{prayer.name}</h3>
-                  <p className="text-sm text-islamic-cream/60 font-arabic">{prayer.nameAr}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{prayer.name}</h3>
+                  <p className="text-sm text-gray-900/60 font-arabic">{prayer.nameAr}</p>
                 </div>
 
                 {/* Prayer Time */}
                 <div className="mb-4">
-                  <div className="text-3xl font-bold text-islamic-cream">{prayer.time}</div>
+                  <div className="text-3xl font-bold text-gray-900">{prayer.time}</div>
                 </div>
 
                 {/* Iqamah Time */}
                 {prayer.iqamah !== '-' && (
-                  <div className="pt-4 border-t border-islamic-cream/20 flex justify-between items-center">
-                    <span className="text-sm text-islamic-cream/70">{t('prayer.iqamah')}</span>
+                  <div className="pt-4 border-t border-gray-200 flex justify-between items-center">
+                    <span className="text-sm text-gray-900/70">{t('prayer.iqamah')}</span>
                     <span className="text-lg font-bold text-islamic-gold">{prayer.iqamah}</span>
                   </div>
                 )}
@@ -316,7 +316,7 @@ const PrayerTimes = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="mt-8 text-center text-sm text-islamic-cream/60 flex items-center justify-center gap-2"
+        className="mt-8 text-center text-sm text-gray-900/60 flex items-center justify-center gap-2"
       >
         <Clock className="w-4 h-4" />
         Updates automatically every minute

@@ -61,10 +61,10 @@ const Navbar = () => {
               transition={{ type: 'spring', stiffness: 300 }}
             />
             <div>
-              <h1 className="text-xl md:text-2xl font-serif font-bold text-islamic-cream">
+              <h1 className="text-xl md:text-2xl font-serif font-bold text-gray-900">
                 Islamic Center of Modesto
               </h1>
-              <p className="text-xs text-islamic-cream/70 hidden md:block">
+              <p className="text-xs text-gray-900/70 hidden md:block">
                 Serving the community since 1984
               </p>
             </div>
@@ -84,7 +84,7 @@ const Navbar = () => {
                     ${
                       location.pathname === link.path
                         ? 'text-islamic-gold'
-                        : 'text-islamic-cream/90 hover:text-islamic-gold'
+                        : 'text-gray-900/90 hover:text-islamic-gold'
                     }
                   `}
                 >
@@ -155,7 +155,7 @@ const Navbar = () => {
                         `}
                       >
                         <span className="text-xl">{lang.flag}</span>
-                        <span className="text-sm font-medium text-islamic-cream">{lang.name}</span>
+                        <span className="text-sm font-medium text-gray-900">{lang.name}</span>
                       </motion.button>
                     ))}
                   </motion.div>
@@ -180,7 +180,7 @@ const Navbar = () => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X className="w-6 h-6 text-islamic-cream" />
+                  <X className="w-6 h-6 text-gray-900" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -190,7 +190,7 @@ const Navbar = () => {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu className="w-6 h-6 text-islamic-cream" />
+                  <Menu className="w-6 h-6 text-gray-900" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -223,7 +223,7 @@ const Navbar = () => {
                         ${
                           location.pathname === link.path
                             ? 'bg-gradient-to-r from-islamic-green to-islamic-green-light text-white'
-                            : 'glass hover:glass-strong text-islamic-cream'
+                            : 'glass hover:glass-strong text-gray-900'
                         }
                       `}
                     >
@@ -266,7 +266,7 @@ const Navbar = () => {
                         ${
                           language === lang.code
                             ? 'bg-gradient-to-r from-islamic-green to-islamic-green-light text-white'
-                            : 'glass hover:glass-strong text-islamic-cream'
+                            : 'glass hover:glass-strong text-gray-900'
                         }
                       `}
                     >

@@ -148,19 +148,19 @@ const DonationSection = () => {
                 )}
               </div>
 
-              <h3 className="font-bold text-islamic-cream text-lg mb-2">{cause.title}</h3>
-              <p className="text-sm text-islamic-cream/70 mb-4 line-clamp-2">{cause.description}</p>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">{cause.title}</h3>
+              <p className="text-sm text-gray-900/70 mb-4 line-clamp-2">{cause.description}</p>
 
               <div className="mb-2">
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="text-islamic-cream/60">{progress}%</span>
+                  <span className="text-gray-900/60">{progress}%</span>
                   <span className="font-bold text-islamic-gold">
                     {formatCurrency(cause.currentAmount)}
                   </span>
                 </div>
 
                 {/* Animated Progress Bar */}
-                <div className="h-3 bg-islamic-dark/30 rounded-full overflow-hidden">
+                <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                   <motion.div
                     className="h-full bg-gradient-to-r from-islamic-gold via-islamic-green to-islamic-green-light relative overflow-hidden"
                     initial={{ width: 0 }}
@@ -172,7 +172,7 @@ const DonationSection = () => {
                   </motion.div>
                 </div>
 
-                <div className="text-right text-xs text-islamic-cream/50 mt-1.5">
+                <div className="text-right text-xs text-gray-900/50 mt-1.5">
                   Goal: {formatCurrency(cause.goalAmount)}
                 </div>
               </div>
@@ -195,11 +195,11 @@ const DonationSection = () => {
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-serif font-bold text-islamic-cream mb-3"
+              className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-3"
             >
               {selectedCauseData.title}
             </motion.h2>
-            <p className="text-islamic-cream/80 text-lg">{selectedCauseData.description}</p>
+            <p className="text-gray-900/80 text-lg">{selectedCauseData.description}</p>
           </div>
 
           {/* Donation Type Toggle */}
@@ -211,7 +211,7 @@ const DonationSection = () => {
                 ${
                   donationType === 'one-time'
                     ? 'bg-gradient-to-r from-islamic-green to-islamic-green-light text-white shadow-lg'
-                    : 'text-islamic-cream/70 hover:text-islamic-cream'
+                    : 'text-gray-900/70 hover:text-gray-900'
                 }
               `}
               whileHover={{ scale: 1.02 }}
@@ -226,7 +226,7 @@ const DonationSection = () => {
                 ${
                   donationType === 'monthly'
                     ? 'bg-gradient-to-r from-islamic-green to-islamic-green-light text-white shadow-lg'
-                    : 'text-islamic-cream/70 hover:text-islamic-cream'
+                    : 'text-gray-900/70 hover:text-gray-900'
                 }
               `}
               whileHover={{ scale: 1.02 }}
@@ -258,7 +258,7 @@ const DonationSection = () => {
                     ${
                       isSelected
                         ? 'bg-gradient-to-br from-islamic-gold to-yellow-500 text-islamic-dark shadow-2xl'
-                        : 'glass hover:glass-strong text-islamic-cream'
+                        : 'glass hover:glass-strong text-gray-900'
                     }
                   `}
                 >
@@ -274,7 +274,7 @@ const DonationSection = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-8"
           >
-            <label className="block text-sm font-semibold text-islamic-cream mb-3">
+            <label className="block text-sm font-semibold text-gray-900 mb-3">
               {t('donate.customAmount')}
             </label>
             <div className="relative">
@@ -303,8 +303,8 @@ const DonationSection = () => {
                 <TrendingUp className="w-6 h-6 text-islamic-dark" />
               </div>
               <div>
-                <p className="font-bold text-islamic-cream mb-2 text-lg">Your Impact</p>
-                <p className="text-sm text-islamic-cream/80 leading-relaxed">
+                <p className="font-bold text-gray-900 mb-2 text-lg">Your Impact</p>
+                <p className="text-sm text-gray-900/80 leading-relaxed">
                   {donationType === 'monthly'
                     ? `Your monthly donation of $${customAmount || selectedAmount} will contribute $${
                         (parseInt(customAmount) || selectedAmount) * 12
@@ -334,7 +334,7 @@ const DonationSection = () => {
             </span>
           </motion.a>
 
-          <p className="text-center text-sm text-islamic-cream/60 mt-5">
+          <p className="text-center text-sm text-gray-900/60 mt-5">
             All donations are tax-deductible. You'll receive a receipt via email.
           </p>
         </motion.div>

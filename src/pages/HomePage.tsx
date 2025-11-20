@@ -90,7 +90,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-xl md:text-3xl mb-12 text-islamic-cream/90 font-light leading-relaxed"
+              className="text-xl md:text-3xl mb-12 text-gray-900/90 font-light leading-relaxed"
             >
               {t('home.subtitle')}
             </motion.p>
@@ -124,7 +124,7 @@ const HomePage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="inline-flex items-center gap-3 glass px-6 py-4 rounded-full text-islamic-cream/90"
+              className="inline-flex items-center gap-3 glass px-6 py-4 rounded-full text-gray-900/90"
             >
               <MapPin className="w-5 h-5 text-islamic-gold" />
               <span className="text-lg">1445 N Carpenter Rd, Modesto, CA 95358</span>
@@ -143,7 +143,7 @@ const HomePage = () => {
               ease: 'easeInOut',
             }}
           >
-            <ChevronDown className="w-8 h-8 text-islamic-cream/60" />
+            <ChevronDown className="w-8 h-8 text-gray-900/60" />
           </motion.div>
         </div>
 
@@ -185,10 +185,10 @@ const HomePage = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-islamic-green to-islamic-green-light rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-islamic-cream mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
                   {stat.value}
                 </div>
-                <div className="text-islamic-cream/70 text-lg">{stat.label}</div>
+                <div className="text-gray-900/70 text-lg">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -252,12 +252,12 @@ const HomePage = () => {
               className="glass-strong rounded-3xl p-8 md:p-12"
             >
               <h2 className="section-title text-left mb-6">About Our Masjid</h2>
-              <p className="text-islamic-cream/90 text-lg leading-relaxed mb-6">
+              <p className="text-gray-900/90 text-lg leading-relaxed mb-6">
                 Established in 1984, Islamic Center of Modesto has been a cornerstone of Islamic faith
                 and practice in our community. We are dedicated to fostering spiritual growth,
                 education, and social welfare for all.
               </p>
-              <p className="text-islamic-cream/80 text-lg leading-relaxed mb-8">
+              <p className="text-gray-900/80 text-lg leading-relaxed mb-8">
                 Our doors are open to everyone seeking knowledge, peace, and community. We
                 offer daily prayers, Islamic education, youth programs, and various community
                 services.
@@ -320,12 +320,12 @@ const HomePage = () => {
                   <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center animate-pulse-scale">
                     <Award className="w-9 h-9 text-islamic-gold" />
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-serif font-bold text-islamic-cream">
+                  <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900">
                     Youth Internship Program
                   </h2>
                 </div>
 
-                <p className="text-xl text-islamic-cream/90 mb-8 leading-relaxed">
+                <p className="text-xl text-gray-900/90 mb-8 leading-relaxed">
                   A supervised volunteer program where high school students support masjid activities
                   and earn officially documented service credits for their resume or school records.
                 </p>
@@ -359,8 +359,8 @@ const HomePage = () => {
                         <item.icon className="w-6 h-6 text-islamic-gold" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg text-islamic-cream mb-1">{item.title}</h3>
-                        <p className="text-islamic-cream/70">{item.desc}</p>
+                        <h3 className="font-bold text-lg text-gray-900 mb-1">{item.title}</h3>
+                        <p className="text-gray-900/70">{item.desc}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -380,7 +380,7 @@ const HomePage = () => {
 
             {/* Right side - What You'll Do */}
             <div className="p-8 md:p-12 bg-gradient-to-br from-islamic-dark/40 to-islamic-dark-blue/40">
-              <h3 className="text-3xl font-serif font-bold text-islamic-cream mb-8">What You'll Do</h3>
+              <h3 className="text-3xl font-serif font-bold text-gray-900 mb-8">What You'll Do</h3>
 
               <div className="space-y-4 mb-8">
                 {[
@@ -408,17 +408,17 @@ const HomePage = () => {
                     transition={{ delay: index * 0.1 + 0.4 }}
                     className="glass p-5 rounded-xl border-l-4 border-islamic-gold hover:scale-105 transition-transform duration-300"
                   >
-                    <h4 className="font-bold text-islamic-cream mb-2">{task.title}</h4>
-                    <p className="text-islamic-cream/70 text-sm">{task.desc}</p>
+                    <h4 className="font-bold text-gray-900 mb-2">{task.title}</h4>
+                    <p className="text-gray-900/70 text-sm">{task.desc}</p>
                   </motion.div>
                 ))}
               </div>
 
               <div className="glass-strong p-6 rounded-xl border-2 border-islamic-green/30">
-                <p className="text-sm text-islamic-cream mb-3 font-semibold">
+                <p className="text-sm text-gray-900 mb-3 font-semibold">
                   Requirements:
                 </p>
-                <ul className="text-sm text-islamic-cream/80 space-y-2">
+                <ul className="text-sm text-gray-900/80 space-y-2">
                   {[
                     'Current high school student (grades 9-12)',
                     'Minimum 3-month commitment',
