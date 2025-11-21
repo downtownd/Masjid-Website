@@ -28,7 +28,7 @@ const Footer = () => {
                 href="https://www.facebook.com/modesto.imam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-lg hover:bg-blue-600 transition-colors"
+                className="bg-gray-700 p-2 rounded-lg hover:bg-islamic-green transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />

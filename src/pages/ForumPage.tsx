@@ -44,7 +44,7 @@ const ForumPage = () => {
       name: 'Community Businesses',
       icon: Store,
       description: 'Halal groceries, meat shops, hardware stores, and more',
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-teal-500 to-teal-600',
     },
     {
       id: 'news' as ForumCategory,
@@ -221,7 +221,7 @@ const ForumPage = () => {
         </div>
 
         {/* Forum Guidelines */}
-        <div className="mt-12 bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-8 border border-blue-100">
+        <div className="mt-12 bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-8 border border-green-100">
           <h3 className="text-2xl font-bold text-islamic-dark mb-4">Forum Guidelines</h3>
           <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
             <div>

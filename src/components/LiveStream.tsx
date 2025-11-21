@@ -175,8 +175,8 @@ const LiveStream = () => {
                 </p>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
-                  <Play className="w-6 h-6 text-blue-600" />
+                <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
+                  <Play className="w-6 h-6 text-teal-600" />
                 </div>
                 <h4 className="font-bold text-islamic-dark mb-1">Education</h4>
                 <p className="text-sm text-gray-600">

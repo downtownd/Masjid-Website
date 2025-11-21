@@ -34,7 +34,7 @@ const DonatePage = () => {
 
       {/* Tax Info */}
       <section className="container-custom pb-12">
-        <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-8 border border-blue-100">
+        <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-8 border border-green-100">
           <h3 className="text-2xl font-bold text-islamic-dark mb-4">Tax Deductible Donations</h3>
           <p className="text-gray-700 mb-4">
             Islamic Center of Modesto is a registered 501(c)(3) nonprofit organization. All donations are

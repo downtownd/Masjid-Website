@@ -42,7 +42,7 @@ const PostCard = ({ post }: PostCardProps) => {
   const getCategoryColor = () => {
     switch (post.category) {
       case 'business':
-        return 'text-blue-600 bg-blue-50'
+        return 'text-teal-600 bg-teal-50'
       case 'news':
         return 'text-green-600 bg-green-50'
       case 'general':

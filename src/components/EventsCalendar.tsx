@@ -76,7 +76,7 @@ const EventsCalendar = ({ limit }: { limit?: number }) => {
 
   const categories = [
     { id: 'all', label: t('events.categories.all'), color: 'bg-gray-600' },
-    { id: 'youth', label: t('events.categories.youth'), color: 'bg-blue-600' },
+    { id: 'youth', label: t('events.categories.youth'), color: 'bg-cyan-600' },
     { id: 'sisters', label: t('events.categories.sisters'), color: 'bg-pink-600' },
     { id: 'ramadan', label: t('events.categories.ramadan'), color: 'bg-purple-600' },
     { id: 'lectures', label: t('events.categories.lectures'), color: 'bg-islamic-green' },

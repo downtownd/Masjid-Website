@@ -23,10 +23,8 @@ export default {
           green: '#006B3F',
           'green-light': '#00A86B',
           gold: '#D4AF37',
-          'royal-blue': '#003366',
           cream: '#F5F5DC',
           dark: '#0a0e27',
-          'dark-blue': '#1a1f3a',
         }
       },
       fontFamily: {

@@ -32,6 +32,18 @@ const HomePage = () => {
 
       {/* Hero Section - Full Screen with Animated Gradient */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Hero Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(/masjid-2.png)',
+            backgroundPosition: 'center',
+          }}
+        />
+
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-islamic-cream/30 via-islamic-cream/50 to-islamic-cream/70" />
+
         {/* Animated Gradient Orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -379,7 +391,7 @@ const HomePage = () => {
             </div>
 
             {/* Right side - What You'll Do */}
-            <div className="p-8 md:p-12 bg-gradient-to-br from-islamic-dark/40 to-islamic-dark-blue/40">
+            <div className="p-8 md:p-12 bg-gradient-to-br from-islamic-dark/40 to-islamic-green/40">
               <h3 className="text-3xl font-serif font-bold text-gray-900 mb-8">What You'll Do</h3>
 
               <div className="space-y-4 mb-8">

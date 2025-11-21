@@ -107,7 +107,7 @@ const PrayerTimes = () => {
       time: prayerTimes.fajr,
       iqamah: '5:50 AM',
       icon: Moon,
-      gradient: 'from-indigo-500 to-purple-600'
+      gradient: 'from-purple-500 to-purple-700'
     },
     {
       name: t('prayer.sunrise'),
@@ -147,7 +147,7 @@ const PrayerTimes = () => {
       time: prayerTimes.isha,
       iqamah: '6:15 PM',
       icon: Moon,
-      gradient: 'from-blue-600 to-indigo-700'
+      gradient: 'from-slate-700 to-slate-900'
     },
   ]
 
